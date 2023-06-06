@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "cc57e10b-d67e-46c2-aa52-a9a31f073150",
+		"name": "Express API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27838554"
+	},
+	"item": [
+		{
+			"name": "GET Message",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"message\": \"Hello World!!!\"\r\n\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"message"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-pvZD+GoJkH/4fqxekumebO0LCyU\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 06 Jun 2023 19:10:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Hello World!!!\"\n}"
+				}
+			]
+		}
+	]
+}
