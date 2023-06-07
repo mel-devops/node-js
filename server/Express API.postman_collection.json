@@ -280,6 +280,194 @@
 					"body": "{\n    \"message\": \"Hello World!!!\"\n}"
 				}
 			]
+		},
+		{
+			"name": "POST car_body",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/car/Ford",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"car",
+						"Ford"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"message\": \"Hello World!!!\"\r\n\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"message"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-pvZD+GoJkH/4fqxekumebO0LCyU\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 06 Jun 2023 19:10:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Hello World!!!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "PUT car_body",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"carId\" : 1,\r\n    \"make\": \"Mazda\",\r\n    \"model\" : \"Mazda6\",\r\n    \"price\" : 30000,\r\n    \"color\" : \"silver\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/car",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"car"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"message\": \"Hello World!!!\"\r\n\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"message"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-pvZD+GoJkH/4fqxekumebO0LCyU\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 06 Jun 2023 19:10:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Hello World!!!\"\n}"
+				}
+			]
 		}
 	]
 }

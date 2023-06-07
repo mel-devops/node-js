@@ -1,6 +1,7 @@
 const cors = require('cors')
 const express = require('express')
 const { body, check, param, validationResult } = require('express-validator')
+const { values } = require('lodash')
 const promisePool = require('./PromisePool.js').promisePool
 
 const PORT = 80
@@ -28,13 +29,33 @@ app.get('/message', cors(corsOptions), async (req, res) => {
         
         //  })
     
+
         //CarMake
-        app.get('/car/:make', cors(corsOptions), async (req, res) => { 
-            const make  = req.params.make;
-            let result = await promisePool.query('SELECT * FROM car where make = ?', [make] )
+        // app.get('/car/:make', cors(corsOptions), async (req, res) => { 
+        //     const make  = req.params.make;
+        //     let result = await promisePool.query('SELECT * FROM car where make = ?', [make] )
+        //     console.log(result[0])
+        //     res.send(result[0])
+        // })
+        
+        //CarBody
+        // const [result] = await promisePool.execute("insert into car (make, model, color, price) values (?, ?, ?, ?)", ["Toyota", "Corolla", "Gray", 30000])
+        // const newCarId = result.insertId;
+        // const [newCar] = await promisePool.query("select * from car where car_id = ?", newCarId)
+        // res.send(newCar[0]);
+      
+        //put car
+
+        app.put('/car/', cors(corsOptions), async (req, res) => { 
+            const { make, model, color, price, carId }= req.body;
+            const UPDATE_CAR = "update car set make = ?, model = ?, color = ?, price = ? where car_id = ?";
+            const result = await promisePool.query(UPDATE_CAR, [make, model, color, price, carId] )
             console.log(result[0])
             res.send(result[0])
         })
+
+   
+        
         
 
 app.listen(PORT, () => {
