@@ -1,6 +1,7 @@
 const cors = require('cors')
 const express = require('express')
 const { body, check, param, validationResult } = require('express-validator')
+const promisePool = require('./PromisePool.js').promisePool
 
 const PORT = 80
 const app = express()
@@ -16,6 +17,14 @@ app.use(express.urlencoded({extended: true}))
 app.get('/message', cors(corsOptions), async (req, res) => {
     res.send({"message": "Hello World"})
     })
+
+
+        app.get('/car', cors(corsOptions), async (req, res) => {
+            let result = await promisePool.query(('SELECT * FROM car where car_id=6'))
+            console.log(result[0])
+        res.send(result[0])
+        
+        })
     
 
 app.listen(PORT, () => {
