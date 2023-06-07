@@ -14,19 +14,28 @@ app.use(express.urlencoded({extended: true}))
 
 // Your endpoints here..
 
+        //messge
 app.get('/message', cors(corsOptions), async (req, res) => {
     res.send({"message": "Hello World"})
     })
 
-
-        app.get('/car/:carID', cors(corsOptions), async (req, res) => {
-            const { carID }= req.params 
-            let result = await promisePool.query('SELECT * FROM car where car_id=?', [carID])
-            console.log(result[0])
-        res.send(result[0])
+        //carID
+        // app.get('/car/:carID', cors(corsOptions), async (req, res) => {
+        // const { carID }= req.params 
+        // let result = await promisePool.query('SELECT * FROM car where car_id=?', [carID])
+        // console.log(result[0])
+        // res.send(result[0])
         
-        })
+        //  })
     
+        //CarMake
+        app.get('/car/:make', cors(corsOptions), async (req, res) => { 
+            const make  = req.params.make;
+            let result = await promisePool.query('SELECT * FROM car where make = ?', [make] )
+            console.log(result[0])
+            res.send(result[0])
+        })
+        
 
 app.listen(PORT, () => {
     console.log(`Express web API running on port: ${PORT}.`)
