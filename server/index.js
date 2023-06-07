@@ -19,8 +19,9 @@ app.get('/message', cors(corsOptions), async (req, res) => {
     })
 
 
-        app.get('/car', cors(corsOptions), async (req, res) => {
-            let result = await promisePool.query(('SELECT * FROM car where car_id=6'))
+        app.get('/car/:carID', cors(corsOptions), async (req, res) => {
+            const { carID }= req.params 
+            let result = await promisePool.query('SELECT * FROM car where car_id=?', [carID])
             console.log(result[0])
         res.send(result[0])
         
